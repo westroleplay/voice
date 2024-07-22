@@ -47,7 +47,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-pkg": "^0.18.1",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "turbo": "latest"
+    "turbo": "^2.0.9"
   },
   "husky": {
     "hooks": {
