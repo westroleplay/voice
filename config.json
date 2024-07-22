@@ -26,11 +26,6 @@
   "ui": {
     "enabled": true,
 
-    "radioMemberList": {
-      "enabled": true,
-      "showMembersOfAllChannels": false
-    },
-
     "interaction": {
       "key": "LMenu",
       "requireMousePressAswell": true
@@ -43,18 +38,5 @@
 
   "locale": {
     "language": "en"
-  },
-
-  "submix": {
-    "radio": true,
-    "call": true
-  },
-
-  "radio": {
-    "enabled": true,
-    "enableMicClicks": true,
-    "micClicksVolume": 0.6,
-    "keybind": "CAPITAL",
-    "noTalkOverMode": false
   }
 }

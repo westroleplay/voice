@@ -7,7 +7,7 @@ let markerTimeout: null | ReturnType<typeof setTimeout> = null;
 let markerSize = -1;
 let firstTime = true;
 
-export function init(voiceModes: Array<VoiceMode>, keybind: string) {
+export function init(voiceModes: Array<VoiceMode>) {
   AddStateBagChangeHandler(
     "proximity",
     "",
@@ -130,10 +130,10 @@ export function init(voiceModes: Array<VoiceMode>, keybind: string) {
       }
     ]
   );
-  RegisterKeyMapping(
-    "changeproximity",
-    getTranslation(["proximity", "keybind"]),
-    "keyboard",
-    keybind
-  );
+  // RegisterKeyMapping(
+  //   "changeproximity",
+  //   getTranslation(["proximity", "keybind"]),
+  //   "keyboard",
+  //   keybind
+  // );
 }

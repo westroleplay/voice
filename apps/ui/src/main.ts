@@ -3,8 +3,8 @@ import "./styles";
 import App from "./App.vue";
 import VWave from "v-wave";
 
-import pinia from "@plugins/pinia";
-import "@plugins/webfontloader";
+import pinia from "./plugins/pinia";
+import "./plugins/webfontloader";
 
 const app = createApp(App);
 

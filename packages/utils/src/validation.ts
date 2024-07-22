@@ -9,10 +9,10 @@ const configLoggingSchema: Schema = {
   properties: {
     level: {
       type: "string",
-      required: true,
-    },
+      required: true
+    }
   },
-  required: true,
+  required: true
 };
 validator.addSchema(configLoggingSchema, "/ConfigLogging");
 
@@ -22,14 +22,14 @@ const configUIInteractionSchema: Schema = {
   properties: {
     key: {
       type: "string",
-      required: true,
+      required: true
     },
     requireMousePressAswell: {
       type: "boolean",
-      required: true,
-    },
+      required: true
+    }
   },
-  required: true,
+  required: true
 };
 validator.addSchema(configUIInteractionSchema, "/ConfigUIInteraction");
 
@@ -39,29 +39,12 @@ const configFrameworkSchema: Schema = {
   properties: {
     customResourceName: {
       type: ["string", "null"],
-      required: false,
-    },
+      required: false
+    }
   },
-  required: true,
+  required: true
 };
 validator.addSchema(configFrameworkSchema, "/ConfigFramework");
-
-const configUIRadioMemberListSchema: Schema = {
-  id: "/ConfigUIRadioMemberList",
-  type: "object",
-  properties: {
-    enabled: {
-      type: "boolean",
-      required: true,
-    },
-    showMembersOfAllChannels: {
-      type: "boolean",
-      required: true,
-    },
-  },
-  required: true,
-};
-validator.addSchema(configUIRadioMemberListSchema, "/ConfigUIRadioMemberList");
 
 const configUISchema: Schema = {
   id: "/ConfigUI",
@@ -69,18 +52,14 @@ const configUISchema: Schema = {
   properties: {
     enabled: {
       type: "boolean",
-      required: true,
+      required: true
     },
     interaction: {
       $ref: "/ConfigUIInteraction",
-      required: true,
-    },
-    radioMemberList: {
-      $ref: "/ConfigUIRadioMemberList",
-      required: true,
-    },
+      required: true
+    }
   },
-  required: true,
+  required: true
 };
 validator.addSchema(configUISchema, "/ConfigUI");
 
@@ -90,58 +69,12 @@ const configLocaleSchema: Schema = {
   properties: {
     language: {
       type: "string",
-      required: true,
-    },
+      required: true
+    }
   },
-  required: true,
+  required: true
 };
 validator.addSchema(configLocaleSchema, "/ConfigLocale");
-
-const configSubmixSchema: Schema = {
-  id: "/ConfigSubmix",
-  type: "object",
-  properties: {
-    radio: {
-      type: "boolean",
-      required: true,
-    },
-    call: {
-      type: "boolean",
-      required: true,
-    },
-  },
-  required: true,
-};
-validator.addSchema(configSubmixSchema, "/ConfigSubmix");
-
-const configRadioSchema: Schema = {
-  id: "/ConfigRadio",
-  type: "object",
-  properties: {
-    enabled: {
-      type: "boolean",
-      required: true,
-    },
-    enableMicClicks: {
-      type: "boolean",
-      required: true,
-    },
-    micClicksVolume: {
-      type: "number",
-      required: true,
-    },
-    keybind: {
-      type: "string",
-      required: true,
-    },
-    noTalkOverMode: {
-      required: true,
-      type: "boolean",
-    },
-  },
-  required: true,
-};
-validator.addSchema(configRadioSchema, "/ConfigRadio");
 
 const configVoiceMode: Schema = {
   id: "/ConfigVoiceMode",
@@ -149,18 +82,18 @@ const configVoiceMode: Schema = {
   properties: {
     range: {
       type: "number",
-      required: true,
+      required: true
     },
     name: {
       type: "string",
-      required: true,
+      required: true
     },
     default: {
       type: ["boolean", "null"],
-      required: false,
-    },
+      required: false
+    }
   },
-  required: true,
+  required: true
 };
 validator.addSchema(configVoiceMode, "/ConfigVoiceMode");
 
@@ -170,10 +103,10 @@ const configProximity: Schema = {
   properties: {
     keybind: {
       type: "string",
-      required: true,
-    },
+      required: true
+    }
   },
-  required: true,
+  required: true
 };
 validator.addSchema(configProximity, "/ConfigProximity");
 
@@ -182,41 +115,33 @@ const configSchema: Schema = {
   properties: {
     logging: {
       $ref: "/ConfigLogging",
-      required: true,
+      required: true
     },
     ui: {
       $ref: "/ConfigUI",
-      required: true,
+      required: true
     },
     locale: {
       $ref: "/ConfigLocale",
-      required: true,
+      required: true
     },
     framework: {
       $ref: "/ConfigFramework",
-      required: true,
-    },
-    submix: {
-      $ref: "/ConfigSubmix",
-      required: true,
+      required: true
     },
     proximity: {
       $ref: "/ConfigProximity",
-      required: true,
+      required: true
     },
     voiceModes: {
       type: "array",
       required: true,
       items: {
         $ref: "/ConfigVoiceMode",
-        required: true,
-      },
-    },
-    radio: {
-      $ref: "/ConfigRadio",
-      required: true,
-    },
-  },
+        required: true
+      }
+    }
+  }
 };
 validator.addSchema(configLoggingSchema, "/ConfigSchema");
 

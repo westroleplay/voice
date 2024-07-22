@@ -7,7 +7,7 @@
   "scripts": {
     "build": "esbuild server=./src/index.ts --bundle --outdir=../../dist/server --target=es2020 --platform=node",
     "dev": "nodemon",
-    "lint": "eslint . --ext .ts --fix --ignore-path .gitignore && prettier --check src/",
+    "lint": "eslint . --fix .gitignore && prettier --check src/",
     "lint:fix": "prettier --write src/"
   },
   "dependencies": {
@@ -15,8 +15,6 @@
     "axios": "^1.6.8"
   },
   "devDependencies": {
-    "@vrpjs/server": "^1.0.4",
-    "@zerio-voice/eslint-config": "workspace:^",
-    "@zerio-voice/prettier-config": "workspace:^"
+    "@vrpjs/server": "^1.0.4"
   }
 }

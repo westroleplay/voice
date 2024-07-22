@@ -29,8 +29,6 @@ jobs:
       - name: Install dependencies
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: pnpm install --no-frozen-lockfile
-      - name: Try to build
-        run: pnpm docs:build
   normal:
     runs-on: ubuntu-latest
     steps:

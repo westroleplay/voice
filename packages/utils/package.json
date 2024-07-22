@@ -11,8 +11,7 @@
     "./structs": "./src/structs.ts",
     "./validation": "./src/validation.ts",
     "./vectors": "./src/vectors.ts",
-    "./translations": "./src/translations.ts",
-    "./submix": "./src/submix.ts"
+    "./translations": "./src/translations.ts"
   },
   "dependencies": {
     "ansicolor": "^2.0.3",

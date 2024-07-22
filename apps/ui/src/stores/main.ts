@@ -1,12 +1,11 @@
 import { defineStore } from "pinia";
 import { Talking } from "@zerio-voice/utils/structs";
-import { postRequest } from "@utils";
+import { postRequest } from "../utils";
 
 export const useMainStore = defineStore("main", {
   state: () => ({
     talking: <Talking>{
-      normal: false,
-      radio: false
+      normal: false
     },
     isOpen: false,
     debug: 0,

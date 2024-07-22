@@ -1,13 +1,21 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@zerio-voice/typescript-config/base.json",
-
+  "display": "Default",
   "compilerOptions": {
+    "esModuleInterop": true,
+    "incremental": false,
+    "isolatedModules": true,
+    "module": "NodeNext",
+    "moduleDetection": "force",
+    "moduleResolution": "NodeNext",
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
     "target": "esnext",
-    "module": "commonjs",
-    "incremental": true,
     "types": ["@citizenfx/server", "@citizenfx/client", "@types/node"]
   },
-
   "exclude": ["**/node_modules", "./node_modules"]
 }
