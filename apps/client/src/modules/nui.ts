@@ -4,11 +4,9 @@ const offsetX = 100;
 const offsetY = 50;
 
 class Nui {
-  hasFocus: boolean;
+  hasFocus = false;
 
   constructor() {
-    this.hasFocus = false;
-
     RegisterNuiCallback("removeFocus", (_data: unknown, cb: NuiCallback) => {
       this.toggleFocus(false);
 
