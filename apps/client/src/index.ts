@@ -17,11 +17,13 @@ function keybindTick() {
   let currentValue = false;
 
   setTick(() => {
-    if (IsControlPressed(0, 0x4bc9dabb) !== false && nuiHandler !== null) {
-      if (currentValue === false) {
-        currentValue = true;
-        nuiHandler.toggleFocus(true);
-      }
+    if (
+      currentValue === false &&
+      IsControlPressed(0, 0x4bc9dabb) !== false &&
+      nuiHandler !== null
+    ) {
+      currentValue = true;
+      nuiHandler.toggleFocus(true);
     } else if (currentValue === true) {
       currentValue = false;
     }

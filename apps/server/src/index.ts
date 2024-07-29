@@ -1,6 +1,5 @@
 import { getConfig } from "@zerio-voice/utils/config";
 import { validateConfig } from "@zerio-voice/utils/validation";
-import { success, warn } from "@zerio-voice/utils/logger";
 import { VoiceData } from "./classes/voiceData";
 
 let defaultProximity = -1;
@@ -11,14 +10,10 @@ function initialize() {
   const cfg = getConfig();
 
   if (cfg) {
-    if (!validateConfig(cfg)) {
-      warn("Your config does not seem to be valid");
-    } else {
+    if (validateConfig(cfg)) {
       SetResourceKvp("zerio-voice_logLevel", cfg.logging.level);
       SetResourceKvp("zerio-voice_locale", cfg.locale.language);
       defaultProximity = cfg.voiceModes.findIndex((v) => v.default);
-
-      success("Your config seems to be valid");
     }
   }
 
@@ -61,11 +56,11 @@ function handleNewPlayer(source: number) {
   MumbleSetPlayerMuted(source, false);
 }
 
-onNet("playerJoining", () => {
+on("playerJoining", () => {
   handleNewPlayer(source);
 });
 
-onNet("playerDropped", () => {
+on("playerDropped", () => {
   const assignedChannel = Player(source).state.assignedChannel;
 
   if (voiceData[source]) {

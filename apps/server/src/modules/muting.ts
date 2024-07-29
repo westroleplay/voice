@@ -106,7 +106,7 @@ RegisterCommand(
   true
 );
 
-onNet("playerDropped", () => {
+on("playerDropped", () => {
   unmutePlayer(source);
   emitNet("zerio-voice:client:playerLeft", -1, source);
 });
