@@ -11,24 +11,6 @@ const serverId = GetPlayerServerId(PlayerId());
 let voiceModes: Array<VoiceMode> = [];
 let proximity = MumbleGetTalkerProximity();
 let isTalking = false;
-let nuiHandler: Nui | null = null;
-
-function keybindTick() {
-  let currentValue = false;
-
-  setTick(() => {
-    if (
-      currentValue === false &&
-      IsControlPressed(0, 0x4bc9dabb) !== false &&
-      nuiHandler !== null
-    ) {
-      currentValue = true;
-      nuiHandler.toggleFocus(true);
-    } else if (currentValue === true) {
-      currentValue = false;
-    }
-  });
-}
 
 async function initialize() {
   const cfg = getConfig();
@@ -44,7 +26,7 @@ async function initialize() {
 
     SetResourceKvp("zerio-voice_interactionKey", cfg.ui.interaction.key);
 
-    nuiHandler = new Nui();
+    void new Nui();
     require("./modules/muting");
     require("./modules/volumes");
     initProximity(voiceModes);
@@ -53,8 +35,6 @@ async function initialize() {
       warn("Awaiting mumble connection");
       await Wait(250);
     }
-
-    keybindTick();
 
     setInterval(() => {
       if (cfg.ui.enabled) {
